@@ -1,5 +1,6 @@
 # InstructLab
 Use Instruct Lab - ilab CLI commands to finetune/deploy models
+https://docs.google.com/document/d/1CYdYQL3o23TG6_gYnmPAoPVUPK8gAXiO8v5YozwA648/edit
 
 ### Command commands
 initiate ilab 
@@ -10,6 +11,7 @@ ilab init
 download default model, and expect below output 
 ```bash 
 ilab download
+ilab download --repository instructlab/granite-7b-lab-GGUF --filename=granite-7b-lab-Q4_K_M.gguf
 ```
 **Folders:**
   /config.yaml
@@ -22,6 +24,7 @@ ilab download
 get the endpoint 
 ```bash 
 ilab serve
+ilab serve --model-path ./models/granite-7b-lab-Q4_K_M.gguf
 ```
 <img width="578" alt="ilab serve" src="https://github.com/suranjannandi-git/Hello_InstructLab/assets/85071786/cfa1bae0-db91-43ca-96eb-0b0229ee0808">
 <img width="1392" alt="ilab server swagger" src="https://github.com/suranjannandi-git/Hello_InstructLab/assets/85071786/a167c7a7-6ec6-44cd-b864-3e28a11397f8">
@@ -29,6 +32,7 @@ ilab serve
 call the chat api
 ```bash 
 ilab chat
+ilab chat -m models/granite-7b-lab-Q4_K_M.GGUF
 ```
 <img width="571" alt="ilab chat" src="https://github.com/suranjannandi-git/Hello_InstructLab/assets/85071786/6d0795a0-4976-4c6a-ba7b-51bda9077c5b">
 
@@ -39,9 +43,9 @@ ilab diff
 
 regerate taxonomy, need to provide QnA.yaml pair file 
 ```bash 
-time ilab generate
-time ilab train
-time ilab convert
+ilab generate
+ilab train
+ilab convert
 ```
 
 ```bash 
